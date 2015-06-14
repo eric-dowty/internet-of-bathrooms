@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize!
-    redirect_to root_path unless current_user && params[:controller] == 'bathrooms'
+    redirect_to root_path unless current_user.registered? #&& params[:controller] == 'bathrooms'
   end
 
   private

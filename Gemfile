@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'pg'
 gem 'bcrypt'
+gem 'skylight'
 gem 'unicorn'
 gem 'turbolinks'
 gem 'jquery-turbolinks'

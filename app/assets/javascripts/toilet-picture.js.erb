@@ -2,10 +2,10 @@ $(document).ready(function(){
 
   var index = 0;
   var toiletSignal;
-  const images = ["assets/toilet-open.png",
-                  "assets/toilet-open-0.png",
-                  "assets/toilet-open-1.png",
-                  "assets/toilet-open-2.png"
+  const images = ["<%= asset_path 'toilet-open.png' %>",
+                  "<%= asset_path 'toilet-open-0.png' %>",
+                  "<%= asset_path 'toilet-open-1.png' %>",
+                  "<%= asset_path 'toilet-open-2.png' %>"
                  ]
 
   function changeImage(){

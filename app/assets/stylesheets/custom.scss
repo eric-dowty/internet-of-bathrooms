@@ -1,0 +1,72 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* needed for container min-height */
+}
+
+#orange-background {
+  min-height: 500px;
+  display: block;
+  background: #F18D03 asset-url("orange-background.jpg") repeat;
+}
+
+#gray-background {
+  min-height: 250px;
+  display: block;
+  background: #3E393A asset-url("gray-background.jpg") repeat;
+}
+
+#github-login {
+  position: absolute;
+  top: 465px;
+  left: calc(50% - 125px);
+  width: 150px !important;
+}
+
+#github-btn {
+  border: none;
+  height: 70px;
+  width: 250px;
+  font-family: 'Coda', cursive;
+  font-size: 200%;
+  color: white;
+  border-radius: 35px;
+  border: solid white 3px;
+  background-color: #F85B31
+}
+
+#github-btn:hover {
+  background-color: #C93612
+}
+
+#iob-main {
+  position: absolute;
+  top: 25px;
+  left: calc(50% - 150px);
+}
+
+#iob-main img {
+  width: 300px !important;
+}
+
+#toilet {
+  position: absolute;
+  top: 225px;
+  left: calc(50% - 90px);
+}
+
+#toilet img {
+  width: 180px !important;
+}
+
+
+#slogan {
+  position: absolute;
+  top: 615px;
+  left: calc(50% - 175px);
+}
+
+#slogan img {
+  width: 350px !important;
+}

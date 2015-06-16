@@ -13,6 +13,5 @@
  *= require_self
  *= require_tree .
  */
-@import "materialize/components/color";
-$primary-color: color("#000033", "lighten-2") !default;
-@import 'materialize';
+
+@import url(http://fonts.googleapis.com/css?family=Coda);

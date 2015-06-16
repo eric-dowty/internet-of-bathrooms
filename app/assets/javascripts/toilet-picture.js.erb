@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function animateToilet(){
 
   var index = 0;
   var toiletSignal;
@@ -10,7 +10,6 @@ $(document).ready(function(){
 
   function changeImage(){
     index >= 3 ? index = 0 : index++;
-    console.log(index)
     $('#toilet-img').attr("src", images[index]);
     toiletSignal = setTimeout(changeImage, 400);
   }
@@ -26,4 +25,4 @@ $(document).ready(function(){
 
   changeImage();
 
-});
+};

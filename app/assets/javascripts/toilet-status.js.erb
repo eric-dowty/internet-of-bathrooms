@@ -1,0 +1,52 @@
+function toiletStatus(){
+
+  setInterval(function(){ 
+    getStatuses()
+  }, 5000); 
+
+};
+
+function getStatuses(){
+
+    $.ajax({
+      url: "/bathrooms.json",
+      dataType: 'json',
+      success: function(success){
+        updateStatus(success)
+      },
+      error: function(error){
+        console.log(error)
+      }
+    });
+
+};
+
+function updateStatus(statuses){
+  bathroomOne(statuses.bathroom1)
+  bathroomTwo(statuses.bathroom1)
+  bathroomThree(statuses.bathroom1)
+}
+
+function bathroomOne(status){
+  if(status === 1){
+    $('#bathroom1-img').attr("src", "<%= asset_path 'occupied.png' %>");
+  } else {
+    $('#bathroom1-img').attr("src", "<%= asset_path 'closed.png' %>");
+  }
+}
+
+function bathroomTwo(status){
+  if(status === 1){
+    $('#bathroom2-img').attr("src", "<%= asset_path 'occupied.png' %>");
+  } else {
+    $('#bathroom2-img').attr("src", "<%= asset_path 'closed.png' %>");
+  }
+}
+
+function bathroomThree(status){
+  if(status === 1){
+    $('#bathroom3-img').attr("src", "<%= asset_path 'occupied.png' %>");
+  } else {
+    $('#bathroom3-img').attr("src", "<%= asset_path 'closed.png' %>");
+  }  
+}

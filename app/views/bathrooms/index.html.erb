@@ -1,1 +1,36 @@
-<%= button_to "Logout", logout_path, method: :delete %>
+<div id="orange-background">
+</div>
+
+<div id="gray-background">
+</div>
+
+<div id="github-logout">
+  <%= button_to "Logout", logout_path, class: 'github-btn', id: 'logout-btn', method: :delete %>
+</div>
+
+<div id="iob-main">
+  <%= image_tag("iob.png") %>
+</div>
+
+<div id="avatar">
+  <%= image_tag(current_user.image_url) %>
+</div>
+
+<div id="bathroom-subtitle">
+  <p>Big workspace bathroom availability.</p>
+</div>
+
+<div id="bathroom-1">
+  <%= image_tag("occupied.png", class: "status-image") %>
+</div>
+
+<div id="bathroom-2">
+  <%= image_tag("open.png", class: "status-image") %>
+</div>
+
+<div id="bathroom-3">
+  <%= image_tag("occupied.png", class: "status-image") %>
+</div>
+
+<div>
+</div>

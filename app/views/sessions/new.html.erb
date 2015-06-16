@@ -5,10 +5,10 @@
 </div>
 
 <div id="github-login">
-  <%= button_to "GitHub Login", '/auth/github', id: 'github-btn', method: :get %>
+  <%= button_to "GitHub Login", '/auth/github', class: 'github-btn', id: 'login-btn', method: :get %>
 </div>
 
-<div id="iob-main">
+<div id="iob-login">
   <%= image_tag("iob.png") %>
 </div>
 
@@ -17,5 +17,10 @@
 </div>
 
 <div id="slogan">
-  <%= image_tag("slogan.png") %>
+  <%= image_tag("slogan.png") %><br>
+</div>
+
+<div id="about">
+  <p>Just like students, the bathrooms at the Turing School are stupid smart!<br>
+  They'll let you know when they are free... login for availability.</p>
 </div>

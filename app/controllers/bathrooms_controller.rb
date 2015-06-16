@@ -1,8 +1,11 @@
 class BathroomsController < ApplicationController
 
-  before_action :authorize!
+  before_action :authorize!, only: [:main]
 
-  def index
+  def main
+  end
+
+  def home
   end
 
 end

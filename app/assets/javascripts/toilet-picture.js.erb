@@ -3,10 +3,10 @@ $(document).ready(function(){
   var index = 0;
   var toiletSignal;
   var images = ["<%= asset_path 'toilet-open.png' %>",
-                  "<%= asset_path 'toilet-open-0.png' %>",
-                  "<%= asset_path 'toilet-open-1.png' %>",
-                  "<%= asset_path 'toilet-open-2.png' %>"
-                 ]
+                "<%= asset_path 'toilet-open-0.png' %>",
+                "<%= asset_path 'toilet-open-1.png' %>",
+                "<%= asset_path 'toilet-open-2.png' %>"
+               ]
 
   function changeImage(){
     index >= 3 ? index = 0 : index++;
@@ -17,7 +17,7 @@ $(document).ready(function(){
 
   $('#toilet-img').mouseenter(function(){
     clearTimeout(toiletSignal);
-    $(this).attr("src", "assets/toilet-closed.png");
+    $(this).attr("src", "<%= asset_path 'toilet-closed.png' %>");
   });
 
   $('#toilet-img').mouseleave(function(){

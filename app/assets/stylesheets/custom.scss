@@ -12,7 +12,8 @@ body {
 }
 
 #gray-background {
-  min-height: 250px;
+  min-height: 100%;
+  height: auto !important;
   display: block;
   background: #3E393A asset-url("gray-background.jpg") repeat;
 }

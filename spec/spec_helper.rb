@@ -1,3 +1,12 @@
+require 'webmock/rspec'
+require 'vcr'
+WebMock.allow_net_connect!(:net_http_connect_on_start => true)
+
+VCR.configure do |config|
+ config.cassette_library_dir = "spec/vcr_cassettes"
+ config.hook_into :webmock
+end
+
 RSpec.configure do |config|
   config.backtrace_exclusion_patterns << /\.rvm\/gems/
 

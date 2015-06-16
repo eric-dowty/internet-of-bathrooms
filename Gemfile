@@ -8,16 +8,19 @@ gem 'jquery-rails'
 gem 'rails', '4.2.1'
 gem 'figaro'
 gem 'omniauth-github'
+gem 'hurley'
 gem 'autoprefixer-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'rails_12factor'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'webmock', group: :test
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'pry'
+  gem 'vcr'
   gem 'launchy'
   gem 'capybara'
   gem 'rspec-rails'
@@ -25,4 +28,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+
 

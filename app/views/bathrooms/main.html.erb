@@ -21,16 +21,27 @@
 </div>
 
 <div id="bathroom-1">
-  <%= image_tag("occupied.png", class: "status-image") %>
+  <% if @toilet_status[:bathroom1] == 1 %>
+    <%= image_tag("occupied.png", class: "status-image", id: 'bathroom1-img') %>
+  <% else %>
+    <%= image_tag("open.png", class: "status-image", id: 'bathroom1-img') %>
+  <% end %>
 </div>
 
 <div id="bathroom-2">
-  <%= image_tag("open.png", class: "status-image") %>
+  <% if @toilet_status[:bathroom2] == 1 %>
+    <%= image_tag("occupied.png", class: "status-image", id: 'bathroom2-img') %>
+  <% else %>
+    <%= image_tag("open.png", class: "status-image", id: 'bathroom2-img') %>
+  <% end %>
 </div>
 
 <div id="bathroom-3">
-  <%= image_tag("occupied.png", class: "status-image") %>
+  <% if @toilet_status[:bathroom3] == 1 %>
+    <%= image_tag("occupied.png", class: "status-image", id: 'bathroom3-img') %>
+  <% else %>
+    <%= image_tag("open.png", class: "status-image", id: 'bathroom3-img') %>
+  <% end %>
 </div>
 
-<div>
-</div>
+<script type="text/javascript">toiletStatus()</script>

@@ -1,7 +1,6 @@
 FactoryGirl.define do
   
   factory :user do
-    id 1
     nickname  "eric-dowty"
     image_url "https://avatars.githubusercontent.com/u/10349516?v..."
     provider  "github"

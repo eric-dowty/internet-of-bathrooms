@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616215434) do
+ActiveRecord::Schema.define(version: 20150617164427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20150616215434) do
   end
 
   add_index "scores", ["user_id"], name: "index_scores_on_user_id", using: :btree
+
+  create_table "trivia", force: :cascade do |t|
+    t.string  "answer"
+    t.integer "value"
+    t.integer "user_id"
+  end
+
+  add_index "trivia", ["user_id"], name: "index_trivia_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "nickname"
@@ -35,4 +43,5 @@ ActiveRecord::Schema.define(version: 20150616215434) do
   end
 
   add_foreign_key "scores", "users"
+  add_foreign_key "trivia", "users"
 end

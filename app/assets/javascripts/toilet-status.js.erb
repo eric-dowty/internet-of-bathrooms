@@ -9,7 +9,7 @@ function toiletStatus(){
 function getStatuses(){
 
     $.ajax({
-      url: "/bathrooms.json",
+      url: "/status.json",
       dataType: 'json',
       success: function(success){
         updateStatus(success)

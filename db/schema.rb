@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614220857) do
+ActiveRecord::Schema.define(version: 20150616215434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "scores", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "points",  default: 0
+  end
+
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "nickname"
@@ -27,4 +34,5 @@ ActiveRecord::Schema.define(version: 20150614220857) do
     t.string   "uid"
   end
 
+  add_foreign_key "scores", "users"
 end

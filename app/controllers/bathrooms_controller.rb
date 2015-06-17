@@ -4,10 +4,18 @@ class BathroomsController < ApplicationController
 
   def main
     @toilet_status = ToiletService.new.usage_data
-    respond_with @toilet_status
+    @trivia        = TriviaService.new.get_question
   end
 
   def home
+  end
+
+  def status
+    respond_with ToiletService.new.usage_data
+  end
+
+  def trivia
+    respond_with TriviaService.new.get_question 
   end
 
 end

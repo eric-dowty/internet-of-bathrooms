@@ -8,4 +8,9 @@ class TriviaController < ApplicationController
     respond_with trivia
   end
 
+  def answer
+    report = Trivia.score_guess(current_user.id, params[:guess])
+    respond_with report
+  end
+
 end

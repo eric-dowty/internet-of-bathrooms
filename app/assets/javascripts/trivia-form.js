@@ -1,7 +1,9 @@
 function triviaForm(){
   
-  $("#trivia-answer-div").hide()
-  $("#trivia-div").show()
+  clearForm();
+
+  $("#trivia-answer-div").hide();
+  $("#trivia-div").show();
 
   $.ajax({
     type: "GET",
@@ -38,3 +40,11 @@ function loadForm(trivia){
 function loadScore(score){
   $('#raw-score').append(score)
 };
+
+function clearForm(){
+  $('#points-up').empty()
+  $('#trivia-category').empty()
+  $('#trivia-question').empty()
+  $('#raw-score').empty()
+  $('#trivia-input').val("")
+}

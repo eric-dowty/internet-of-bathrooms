@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
     true
   end
 
+  def get_score
+    Score.find_by(user_id: self.id).points
+  end
+
 end

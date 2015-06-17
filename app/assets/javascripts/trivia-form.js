@@ -1,6 +1,7 @@
 function triviaForm(){
+  
   $.ajax({
-    url: "/trivia.json",
+    url: "/trivia",
     dataType: 'json',
     success: function(success){
       loadForm(success)
@@ -9,12 +10,26 @@ function triviaForm(){
       console.log(error)
     }
   });
+
+  $.ajax({
+    url: "/score",
+    dataType: 'json',
+    success: function(success){
+      loadScore(success)
+    },
+    error: function(error){
+      console.log(error)
+    }
+  });
+  
 };
 
 function loadForm(trivia){
-  // $("#trivia-form").append(renderForm(trivia))
+  $('#points-up').append(trivia.value)
+  $('#trivia-category').append(trivia.category.title)
+  $('#trivia-question').append(trivia.question)
 };
 
-function checkAnswer(){
-
+function loadScore(score){
+  $('#raw-score').append(score)
 };

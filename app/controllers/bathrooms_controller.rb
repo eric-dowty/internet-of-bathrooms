@@ -7,7 +7,6 @@ class BathroomsController < ApplicationController
 
   def main
     @toilet_status = ToiletService.new.usage_data
-    @trivia        = TriviaService.new.get_question
   end
 
   def status

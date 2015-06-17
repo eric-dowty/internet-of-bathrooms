@@ -8,7 +8,7 @@ class TriviaService
 
   def get_question
     response = connection.get("/api/random")
-    response_body = parse(response.body)
+    response_body = parse(response.body).first
   end
 
   private

@@ -1,4 +1,8 @@
+require 'ostruct'
+
 class User < ActiveRecord::Base
+  has_one :score
+  has_one :trivia
 
   def self.find_or_create_from_auth(data)
     user = User.find_or_create_by(provider: data.provider, uid: data.uid)
@@ -14,6 +18,15 @@ class User < ActiveRecord::Base
 
   def registered?
     true
+  end
+
+  def get_score
+    Score.find_by(user_id: self.id).points
+  end
+
+  def get_trivia
+    trivia = Trivia.find_by(user_id: self.id)
+    {answer: trivia.answer, value: trivia.value}
   end
 
 end

@@ -28,6 +28,11 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'factory_girl_rails'
+  gem 'teaspoon'
+  gem 'teaspoon-jasmine'
+  gem 'simplecov', :require => false, :group => :test
+  gem 'emoji-rspec', git: "git@github.com:carhartl/emoji-rspec.git", branch: "rspec-3"
 end
 
 

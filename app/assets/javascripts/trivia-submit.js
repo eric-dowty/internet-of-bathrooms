@@ -42,7 +42,7 @@ function triviaSubmit(){
     
     $.ajax({
       type: "GET",
-      url:  "/answer",
+      url:  "/answer.json",
       data: "guess=" + inputBox,
       dataType: "json",
       success: function(success){

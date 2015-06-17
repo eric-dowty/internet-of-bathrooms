@@ -7,7 +7,7 @@ function triviaForm(){
 
   $.ajax({
     type: "GET",
-    url: "/trivia",
+    url: "/trivia.json",
     dataType: "json",
     success: function(success){
       loadForm(success)
@@ -19,7 +19,7 @@ function triviaForm(){
 
   $.ajax({
     type: "GET",
-    url: "/score",
+    url: "/score.json",
     dataType: "json",
     success: function(success){
       loadScore(success)

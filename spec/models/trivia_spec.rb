@@ -38,6 +38,7 @@ RSpec.describe Trivia, type: :model do
     expect(user.get_score).to eq(0)
     score = Trivia.score_guess(user.id, "Romeo")
     expect(user.get_score).to eq(-100)
+    expect(score).to eq({ guess: "Romeo", answer: "Romeo & Juliet", score: -100, value: -100, success: false })
   end
 
   it "calculates correct score for close guesses" do 

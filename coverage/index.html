@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-17T13:56:04-06:00">2015-06-17T13:56:04-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-17T15:38:41-06:00">2015-06-17T15:38:41-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.22%</span></span>
+    (<span class="covered_percent"><span class="green">97.29%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.74
+         1.83
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>32</b> files in total.
-    <b>252</b> relevant lines. 
-    <span class="green"><b>245</b> lines covered</span> and
+    <b>258</b> relevant lines. 
+    <span class="green"><b>251</b> lines covered</span> and
     <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -74,20 +74,20 @@
         <td class="strong"><a href="#f81afd6f9262e787039d3a1025afccfd838d7e58" class="src_link" title="app/models/score.rb">app/models/score.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>7</td>
-        <td>3</td>
-        <td>3</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#1684e525449c0ddb805699346691780d70fd7179" class="src_link" title="app/models/trivia.rb">app/models/trivia.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>44</td>
-        <td>23</td>
-        <td>23</td>
+        <td>47</td>
+        <td>26</td>
+        <td>26</td>
         <td>0</td>
-        <td>6.6</td>
+        <td>6.7</td>
       </tr>
       
       <tr>
@@ -253,9 +253,9 @@
       <tr>
         <td class="strong"><a href="#a686f6d02da77a9d460d9bb5c7416a45d4288796" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>10</td>
-        <td>10</td>
+        <td>19</td>
+        <td>11</td>
+        <td>11</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -313,9 +313,9 @@
       <tr>
         <td class="strong"><a href="#7dac40d13b7454123631dbded7308e3b4426b177" class="src_link" title="spec/models/trivia_spec.rb">spec/models/trivia_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>56</td>
-        <td>40</td>
-        <td>40</td>
+        <td>57</td>
+        <td>41</td>
+        <td>41</td>
         <td>0</td>
         <td>1.3</td>
       </tr>
@@ -481,8 +481,8 @@
     <h3>app/models/score.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -514,10 +514,10 @@
           <code class="ruby">  def self.update_score(user_id, score)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="7" data-linenumber="5">
+          <span class="hits">7</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    Score.where(user_id: user_id).first.update(points: score)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -541,8 +541,8 @@
     <h3>app/models/trivia.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>23</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
+      <b>26</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -679,136 +679,154 @@
         <li class="covered" data-hits="7" data-linenumber="22">
           <span class="hits">7</span>
           
-          <code class="ruby">    score = nil</code>
+          <code class="ruby">    answer = Trivia.get_answer(user_id)</code>
         </li>
       
         <li class="covered" data-hits="7" data-linenumber="23">
           <span class="hits">7</span>
           
-          <code class="ruby">    user  = User.find(user_id)</code>
+          <code class="ruby">    value  = Trivia.get_value(user_id)</code>
         </li>
       
         <li class="covered" data-hits="7" data-linenumber="24">
           <span class="hits">7</span>
           
-          <code class="ruby">    if strip(words) == strip(Trivia.get_answer(user_id))</code>
+          <code class="ruby">    win    = good_guess?(words, answer)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="25">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      score = user.get_score + Trivia.get_value(user_id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="27">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      score = user.get_score - Trivia.get_value(user_id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="29">
+        <li class="covered" data-hits="7" data-linenumber="25">
           <span class="hits">7</span>
           
-          <code class="ruby">    Score.where(user_id: user_id).first.update(points: score)</code>
+          <code class="ruby">    value  = value * -1 unless win</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="26">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    score = User.find(user_id).get_score + value</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="27">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    Score.update_score(user_id, score)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="28">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    { guess: words, answer: answer, score: score, value: value, success: win }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.strip(words)</code>
+          <code class="ruby">  def self.good_guess?(words, answer)</code>
         </li>
       
-        <li class="covered" data-hits="47" data-linenumber="35">
-          <span class="hits">47</span>
+        <li class="covered" data-hits="7" data-linenumber="34">
+          <span class="hits">7</span>
           
-          <code class="ruby">    words.downcase.split(&#39; &#39;).reject { |word| common_words.include?(word) }.sort.join</code>
+          <code class="ruby">    strip(words) == strip(answer)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.common_words</code>
+          <code class="ruby">  def self.strip(words)</code>
         </li>
       
-        <li class="covered" data-hits="33" data-linenumber="39">
-          <span class="hits">33</span>
+        <li class="covered" data-hits="47" data-linenumber="38">
+          <span class="hits">47</span>
           
-          <code class="ruby">    [&quot;the&quot;, &quot;be&quot;, &quot;to&quot;, &quot;of&quot;, &quot;and&quot;, &quot;a&quot;, &quot;in&quot;, &quot;that&quot;, &quot;have&quot;, &quot;I&quot;, &quot;it&quot;, </code>
+          <code class="ruby">    words.downcase.split(&#39; &#39;).reject { |word| common_words.include?(word) }.sort.join</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">     &quot;for&quot;, &quot;not&quot;, &quot;on&quot;, &quot;with&quot;, &quot;he&quot;, &quot;as&quot;, &quot;you&quot;, &quot;do&quot;, &quot;at&quot;, &quot;this&quot;, &quot;but&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">     &quot;his&quot;, &quot;by&quot;, &quot;&amp;&quot; ]</code>
+          <code class="ruby">  def self.common_words</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="covered" data-hits="33" data-linenumber="42">
+          <span class="hits">33</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    [&quot;the&quot;, &quot;be&quot;, &quot;to&quot;, &quot;of&quot;, &quot;and&quot;, &quot;a&quot;, &quot;in&quot;, &quot;that&quot;, &quot;have&quot;, &quot;I&quot;, &quot;it&quot;, </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">     &quot;for&quot;, &quot;not&quot;, &quot;on&quot;, &quot;with&quot;, &quot;he&quot;, &quot;as&quot;, &quot;you&quot;, &quot;do&quot;, &quot;at&quot;, &quot;this&quot;, &quot;but&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">     &quot;his&quot;, &quot;by&quot;, &quot;&amp;&quot;, &quot;-&quot; ]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">end</code>
@@ -2443,8 +2461,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2512,49 +2530,55 @@
           <code class="ruby">  get                     &#39;/trivia&#39;, to: &#39;trivia#data&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get                     &#39;/answer&#39;, to: &#39;trivia#answer&#39;   </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">  get                      &#39;/score&#39;, to: &#39;scores#show&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">  get                       &#39;*path&#39;, :to =&gt; &#39;errors#show&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">  root &#39;bathrooms#home&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -3079,8 +3103,8 @@
     <h3>spec/models/trivia_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>40</b> relevant lines. 
-      <span class="green"><b>40</b> lines covered</span> and
+      <b>41</b> relevant lines. 
+      <span class="green"><b>41</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3328,97 +3352,103 @@
           <code class="ruby">    expect(user.get_score).to eq(-100)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(score).to eq({ guess: &quot;Romeo&quot;, answer: &quot;Romeo &amp; Juliet&quot;, score: -100, value: -100, success: false })</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="43">
           
-          <code class="ruby">  it &quot;calculates correct score for close guesses&quot; do </code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">    score.update(user_id: user.id)</code>
+          <code class="ruby">  it &quot;calculates correct score for close guesses&quot; do </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">    trivia.update(user_id: user.id) </code>
+          <code class="ruby">    score.update(user_id: user.id)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">    score = Trivia.score_guess(user.id, &quot;Romeo and Juliet&quot;)</code>
+          <code class="ruby">    trivia.update(user_id: user.id) </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(user.get_score).to eq(100)</code>
+          <code class="ruby">    score = Trivia.score_guess(user.id, &quot;Romeo and Juliet&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">    score = Trivia.score_guess(user.id, &quot;jUliet RomEO&quot;)</code>
+          <code class="ruby">    expect(user.get_score).to eq(100)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(user.get_score).to eq(200)</code>
+          <code class="ruby">    score = Trivia.score_guess(user.id, &quot;jUliet RomEO&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">    score = Trivia.score_guess(user.id, &quot;Romeo&quot;)</code>
+          <code class="ruby">    expect(user.get_score).to eq(200)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(user.get_score).to eq(100)</code>
+          <code class="ruby">    score = Trivia.score_guess(user.id, &quot;Romeo&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
-          <code class="ruby">    score = Trivia.score_guess(user.id, &quot;Juliet&quot;)</code>
+          <code class="ruby">    expect(user.get_score).to eq(100)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(user.get_score).to eq(0)</code>
+          <code class="ruby">    score = Trivia.score_guess(user.id, &quot;Juliet&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(user.get_score).to eq(0)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">end</code>

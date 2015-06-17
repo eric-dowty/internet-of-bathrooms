@@ -1,4 +1,23 @@
 <div id="trivia-answer-div">
-  <div id="trivia-answer-box">
+  <div id="right-or-wrong">
+    <span id="right-or-wrong-label"></span><span id="points-awarded-number"></span>
+    <span id="points-awarded-label">points.</span>
+  </div>
+    <div id="answer-form">
+    <table id="answer-table">
+      <tr>
+        <td class="answer-title"><span id="answer-yours-label">Guess:</span></td>
+        <td class="table-info"><span id="guess-yours"></span></td>
+      </tr>
+      <tr>
+        <td class="table-title"><span id="answer-judges-label">Answer:</span></td>
+        <td class="table-info"><span id="answer-judges"></span></td>
+      </tr>
+    </table>
+  </div>
+  <div id="trivia-next">
+    <button type="button" id="trivia-next-btn">Next Question</button>
   </div>
 </div>
+
+<script type="text/javascript">triviaNext()</script>

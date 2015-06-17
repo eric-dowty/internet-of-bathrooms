@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get                  '/bathrooms', to: 'bathrooms#main'
 
   get                     '/trivia', to: 'trivia#data'
+  get                     '/answer', to: 'trivia#answer'   
 
   get                      '/score', to: 'scores#show'
   

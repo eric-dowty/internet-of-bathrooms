@@ -349,11 +349,104 @@ body {
   left: calc(50% + 100px);
 }
 
-#trivia-answer-box {
+#answer-form {
   position: absolute;
   top: 155px;
   width: 600px;
   height: 110px;
+  left: calc(50% - 300px);  
+}
+
+#answer-table {
+  table-layout: fixed;  
+}
+
+#trivia-next {
+  position: absolute;
+  top: 345px;
+  width: 600px;
+  height: 40px;
   left: calc(50% - 300px); 
-  border: solid 1px black;
+}
+
+#answer-title {
+  position: absolute;
+  top: 110px;
+  width: 600px;
+  height: 290px;
+  left: calc(50% - 300px);
+}
+
+#answer-yours-label {
+  color: white;
+  font-family: 'Coda', cursive;
+  font-size: 120%;
+  margin: 10px;
+}
+
+#guess-yours {
+  color: white;
+  font-family: 'Coda', cursive;
+  font-size: 120%; 
+}
+
+#answer-judges-label {
+  color: white;
+  font-family: 'Coda', cursive;
+  font-size: 120%; 
+  margin: 10px;
+}
+
+#answer-judges {
+  color: white;
+  font-family: 'Coda', cursive;
+  font-size: 120%;
+}
+
+#right-or-wrong {
+  position: absolute;
+  top: 110px;
+  width: 600px;
+  height: 290px;
+  left: calc(50% - 300px); 
+}
+
+#right-or-wrong-label {
+  color: white;
+  font-family: 'Coda', cursive;
+  font-size: 160%;
+}
+
+#points-awarded-number {
+  color: white;
+  font-family: 'Coda', cursive;
+  font-size: 160%;
+  margin: 10px; 
+}
+
+#points-awarded-label {
+  color: white;
+  font-family: 'Coda', cursive;
+  font-size: 160%;
+}
+
+#trivia-next-btn {
+  margin-left: calc(50% - 75px);
+  border: none;
+  font-family: 'Coda', cursive;
+  color: white;
+  border-radius: 35px;
+  border: solid white 3px;
+  background-color: #F85B31;
+  height: 40px;
+  width: 150px;
+  font-size: 110%;
+}
+
+#trivia-next-btn:hover {
+  background-color: #C93612
+}
+
+#trivia-next-btn:focus {
+  outline: 0;
 }

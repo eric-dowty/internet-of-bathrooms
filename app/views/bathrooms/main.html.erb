@@ -24,7 +24,10 @@
 
 <%= render partial: 'bathrooms/trivia' %>
 
+<%= render partial: 'bathrooms/answer' %>
+
 <%= render partial: 'bathrooms/status', :locals => { :toilet_status => @toilet_status } %>
 
 <script type="text/javascript">toiletStatus()</script>
 <script type="text/javascript">triviaForm()</script>
+<script type="text/javascript">triviaSubmit()</script>

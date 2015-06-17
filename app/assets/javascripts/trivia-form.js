@@ -1,8 +1,12 @@
 function triviaForm(){
   
+  $("#trivia-answer-div").hide()
+  $("#trivia-div").show()
+
   $.ajax({
+    type: "GET",
     url: "/trivia",
-    dataType: 'json',
+    dataType: "json",
     success: function(success){
       loadForm(success)
     },
@@ -12,8 +16,9 @@ function triviaForm(){
   });
 
   $.ajax({
+    type: "GET",
     url: "/score",
-    dataType: 'json',
+    dataType: "json",
     success: function(success){
       loadScore(success)
     },

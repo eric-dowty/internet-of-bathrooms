@@ -348,3 +348,12 @@ body {
   top: 425px;
   left: calc(50% + 100px);
 }
+
+#trivia-answer-box {
+  position: absolute;
+  top: 155px;
+  width: 600px;
+  height: 110px;
+  left: calc(50% - 300px); 
+  border: solid 1px black;
+}

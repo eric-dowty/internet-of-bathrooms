@@ -4,7 +4,7 @@ class TriviaController < ApplicationController
 
   def data
     trivia = TriviaService.new.get_question 
-    Trivia.create(user_id: current_user.id, answer: trivia[:answer], value: trivia[:value])
+    Trivia.update_question(current_user.id, trivia[:answer], trivia[:value])
     respond_with trivia
   end
 

@@ -24,6 +24,14 @@ const wrongAnswer = ["WTF? Bad answer...",
                      "Are you a GSchooler?",
                      "Ain't no time for that."]
 
+function clearAnswerForm(){
+  $("#right-or-wrong-label").empty()
+  $("#guess-yours").empty()
+  $("#answer-judges").empty()
+  $("#points-awarded-number").empty()
+  $("#raw-score").empty()
+}
+
 function triviaSubmit(){
 
   $("#trivia-submit-btn").click(function(){
@@ -38,6 +46,7 @@ function triviaSubmit(){
       data: "guess=" + inputBox,
       dataType: "json",
       success: function(success){
+        clearAnswerForm();
         loadReport(success)
       },
       error: function(error){
@@ -54,6 +63,7 @@ function loadReport(report){
   $("#answer-judges").append(report.answer)
   $("#points-awarded-number").append(report.value)
   $("#raw-score").append(report.score)
+  $("#trivia-answer-div").fadeIn(1400);
 }
 
 function answerMessage(success){

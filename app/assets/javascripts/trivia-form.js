@@ -1,9 +1,11 @@
 function triviaForm(){
   
-  clearForm();
+  
 
   $("#trivia-answer-div").hide();
   $("#trivia-div").show();
+
+  clearForm();
 
   $.ajax({
     type: "GET",

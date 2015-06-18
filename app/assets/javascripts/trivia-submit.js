@@ -38,7 +38,7 @@ function triviaSubmit(){
 
     var inputBox = $('#trivia-input').val();
 
-    $("#trivia-div").hide();
+    $("#trivia-div").fadeOut();
     
     $.ajax({
       type: "GET",
@@ -63,7 +63,7 @@ function loadReport(report){
   $("#answer-judges").append(report.answer)
   $("#points-awarded-number").append(report.value)
   $("#raw-score").append(report.score)
-  $("#trivia-answer-div").show();
+  $("#trivia-answer-div").fadeIn();
 }
 
 function answerMessage(success){

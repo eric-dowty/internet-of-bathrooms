@@ -35,13 +35,21 @@ class Trivia < ActiveRecord::Base
   end
 
   def self.strip(words)
-    words.downcase.split(' ').reject { |word| common_words.include?(word) }.sort.join
+    nothing_common = words.downcase.split(' ').reject do |word| 
+      common_words.include?(word)
+    end.sort.join
+    html_reject(nothing_common)
   end
 
   def self.common_words
     ["the", "be", "to", "of", "and", "a", "in", "that", "have", "I", "it", 
      "for", "not", "on", "with", "he", "as", "you", "do", "at", "this", "but",
-     "his", "by", "&", "-", ",", "\"", "(", ")" ]
+     "his", "by", "&", "-", ",", "\"", "(", ")", "<i>", "</i>", "<p>", "</p>",
+     "<strong>", "</strong>", "[", "]", "{", "}"]
+  end
+
+  def self.html_reject(word_string)
+    word_string.gsub(/(<i>|<\/i>|<strong>|<\/strong>)/,'')
   end
 
 end

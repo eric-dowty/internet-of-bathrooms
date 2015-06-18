@@ -1,34 +1,32 @@
 function triviaForm(){
-  
-  
 
-  $("#trivia-answer-div").hide();
-  $("#trivia-div").show();
+  $("#trivia-next-btn").click(function(){
+    
+    $("#trivia-answer-div").fadeOut();
 
-  clearForm();
+    $.ajax({
+      type: "GET",
+      url: "/trivia",
+      dataType: "json",
+      success: function(success){
+        loadForm(success)
+      },
+      error: function(error){
+        console.log(error)
+      }
+    });
 
-  $.ajax({
-    type: "GET",
-    url: "/trivia",
-    dataType: "json",
-    success: function(success){
-      loadForm(success)
-    },
-    error: function(error){
-      console.log(error)
-    }
-  });
-
-  $.ajax({
-    type: "GET",
-    url: "/score",
-    dataType: "json",
-    success: function(success){
-      loadScore(success)
-    },
-    error: function(error){
-      console.log(error)
-    }
+    $.ajax({
+      type: "GET",
+      url: "/score",
+      dataType: "json",
+      success: function(success){
+        loadScore(success)
+      },
+      error: function(error){
+        console.log(error)
+      }
+    });
   });
   
 };
@@ -42,11 +40,3 @@ function loadForm(trivia){
 function loadScore(score){
   $('#raw-score').append(score)
 };
-
-function clearForm(){
-  $('#points-up').empty()
-  $('#trivia-category').empty()
-  $('#trivia-question').empty()
-  $('#raw-score').empty()
-  $('#trivia-input').val("")
-}

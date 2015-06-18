@@ -61,4 +61,11 @@ RSpec.describe Trivia, type: :model do
     expect(user.get_score).to eq(100)
   end
 
+  it "scores correct for non italicized word match retest" do
+    score.update(user_id: user.id)
+    trivia.update(user_id: user.id, answer: "<i>The Lost Weekend</i>")
+    score = Trivia.score_guess(user.id, "lost weekend")
+    expect(user.get_score).to eq(100)
+  end
+
 end

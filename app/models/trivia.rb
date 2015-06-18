@@ -35,10 +35,10 @@ class Trivia < ActiveRecord::Base
   end
 
   def self.strip(words)
-    nothing_common = words.downcase.split(' ').reject do |word| 
+    nothing_common = html_reject(words).downcase.split(' ').reject do |word|
       common_words.include?(word)
     end.sort.join
-    html_reject(nothing_common)
+    nothing_common
   end
 
   def self.common_words

@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617164427) do
+ActiveRecord::Schema.define(version: 20150621223028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bathrooms", force: :cascade do |t|
+    t.string  "description"
+    t.integer "status",      default: 0
+  end
 
   create_table "scores", force: :cascade do |t|
     t.integer "user_id"

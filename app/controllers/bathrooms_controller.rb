@@ -10,7 +10,12 @@ class BathroomsController < ApplicationController
   end
 
   def status
-    respond_with ToiletService.new.usage_data
+    respond_with Bathroom.status
+  end
+
+  def updates
+    Bathroom.updates
+    respond_with Bathroom.status
   end
 
 end

@@ -5,9 +5,9 @@ class Bathroom < ActiveRecord::Base
 
   def self.status
     {
-      "bathroom1": Bathroom.find_by(description: "bathroom1").status,
-      "bathroom2": Bathroom.find_by(description: "bathroom2").status,
-      "bathroom3": Bathroom.find_by(description: "bathroom3").status
+      "bathroom1" => Bathroom.find_by(description: "bathroom1").status,
+      "bathroom2" => Bathroom.find_by(description: "bathroom2").status,
+      "bathroom3" => Bathroom.find_by(description: "bathroom3").status
     }
   end
 

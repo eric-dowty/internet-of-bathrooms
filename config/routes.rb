@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get                      '/login', to: 'bathrooms#home'
   get                     '/status', to: 'bathrooms#status'
+  get                    '/updates', to: 'bathrooms#updates'
   get                  '/bathrooms', to: 'bathrooms#main'
 
   get                     '/trivia', to: 'trivia#data'

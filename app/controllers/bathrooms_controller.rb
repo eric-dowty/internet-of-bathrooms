@@ -6,7 +6,7 @@ class BathroomsController < ApplicationController
   end
 
   def main
-    @toilet_status = ToiletService.new.usage_data
+    @toilet_status = Bathroom.status
   end
 
   def status
@@ -14,7 +14,7 @@ class BathroomsController < ApplicationController
   end
 
   def updates
-    Bathroom.updates
+    Bathroom.updates(params["status"]) if params['key'] == ENV['TOILET_STATUS_KEY'] 
     respond_with Bathroom.status
   end
 

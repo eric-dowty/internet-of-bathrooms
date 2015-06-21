@@ -13,4 +13,10 @@ RSpec.describe Bathroom, type: :model do
     expect(b).to_not be_valid
   end
 
+  it "must be a unique bathroom" do
+    Bathroom.create!(description: 'bathroom1')
+    repeat = Bathroom.new(description: 'bathroom1')
+    expect(repeat).to_not be_valid
+  end
+
 end

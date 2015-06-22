@@ -36,14 +36,23 @@ class Trivia < ActiveRecord::Base
   end 
 
   def self.good_guess?(words, answer)
-    strip(words) == strip(answer)
+    words  = strip_chars(words)
+    answer = strip_chars(answer)
+    strip_words(words) == strip_words(answer) 
   end
 
-  def self.strip(words)
+  def self.strip_words(words)
     nothing_common = words.downcase.split(' ').reject do |word|
       common_words.include?(word)
     end
     nothing_common == [] ? ("noguess") : nothing_common.sort.join
+  end
+
+  def self.strip_chars(words)
+    stripped_chars = words.downcase.chars.reject do |char|
+      common_chars.include?(char)
+    end
+    stripped_chars.join
   end
 
   def self.common_words
@@ -51,6 +60,10 @@ class Trivia < ActiveRecord::Base
      "for", "not", "on", "with", "he", "as", "you", "do", "at", "this", "but",
      "his", "by", "&", "-", ",", "\"", "(", ")", "<i>", "</i>", "<p>", "</p>",
      "<strong>", "</strong>", "[", "]", "{", "}"]
+  end
+
+  def self.common_chars
+    [",", "\"", "'", "(", ")", "<", ">", "i", "/", "<p>", "</p>", "[", "]", "{", "}"]
   end
 
 end

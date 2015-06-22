@@ -37,7 +37,7 @@ function triviaSubmit(){
   $("#trivia-submit-btn").click(function(){
 
     var inputBox = $('#trivia-input').val();
-
+    
     $("#trivia-div").fadeOut();
     
     $.ajax({

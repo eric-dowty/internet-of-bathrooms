@@ -18,27 +18,32 @@ class Trivia < ActiveRecord::Base
     end
   end
 
-  def self.score_guess(user_id, words)
+  def self.score_guess(user_id, guess)
+    words  = handle_jquery_weirdness(guess)
     answer = Trivia.get_answer(user_id)
     value  = Trivia.get_value(user_id)
     win    = good_guess?(words, answer)
     value  = value * -1 unless win
-    score = User.find(user_id).get_score + value
+    score  = User.find(user_id).get_score + value
     Score.update_score(user_id, score)
     { guess: words, answer: answer, score: score, value: value, success: win }
   end
 
   private
 
+  def self.handle_jquery_weirdness(guess)
+    guess.include?("jQuery") ? "noguess" : guess
+  end 
+
   def self.good_guess?(words, answer)
     strip(words) == strip(answer)
   end
 
   def self.strip(words)
-    nothing_common = html_reject(words).downcase.split(' ').reject do |word|
+    nothing_common = words.downcase.split(' ').reject do |word|
       common_words.include?(word)
-    end.sort.join
-    nothing_common
+    end
+    nothing_common == [] ? ("noguess") : nothing_common.sort.join
   end
 
   def self.common_words
@@ -46,10 +51,6 @@ class Trivia < ActiveRecord::Base
      "for", "not", "on", "with", "he", "as", "you", "do", "at", "this", "but",
      "his", "by", "&", "-", ",", "\"", "(", ")", "<i>", "</i>", "<p>", "</p>",
      "<strong>", "</strong>", "[", "]", "{", "}"]
-  end
-
-  def self.html_reject(word_string)
-    word_string.gsub(/(<i>|<\/i>|<strong>|<\/strong>)/,'')
   end
 
 end

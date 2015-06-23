@@ -63,7 +63,7 @@ function loadReport(report){
   $("#answer-judges").append(report.answer)
   $("#points-awarded-number").append(report.value)
   $("#raw-score").append(report.score)
-  $("#trivia-answer-div").fadeIn(1400);
+  $("#trivia-answer-div").fadeIn(900);
 }
 
 function answerMessage(success){

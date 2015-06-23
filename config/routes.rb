@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get                     '/trivia', to: 'trivia#data'
   get                     '/answer', to: 'trivia#answer'   
 
+  get                        '/bot', to: 'users#get_bot_data'
+  get                 '/bot_update', to: 'users#update_bot_data'
+
   get                      '/score', to: 'scores#show'
   
   get                       '*path', :to => 'errors#show'

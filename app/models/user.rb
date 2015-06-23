@@ -31,10 +31,16 @@ class User < ActiveRecord::Base
     {answer: trivia.answer, value: trivia.value}
   end
 
-  # private
+  def self.get_bot_data(user)
+    {username: user.nickname, 
+     bot: user.bot, 
+     status: Bathroom.all.pluck(:status).reduce(:+)}
+  end
 
-  # def initialize_score
-  #   score = Score.create!(user_id: )
-  # end
+  def self.update_bot_data(user)
+    user = User.find(user.id) 
+    user.bot ? user.update(bot: false) : user.update(bot: true)
+    get_bot_data(user)
+  end
 
 end

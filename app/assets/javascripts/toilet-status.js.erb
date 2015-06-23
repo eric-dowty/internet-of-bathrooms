@@ -19,12 +19,54 @@ function getStatuses(){
       }
     });
 
+    $.ajax({
+      url: "/bot",
+      dataType: 'json',
+      method: 'GET',
+      success: function(success){
+        checkSlack(success)
+      },
+      error: function(error){
+        console.log(error)
+      }
+    });
+
 };
+
+function sendSlack(username){
+  console.log(username)
+}
+
+function checkSlack(message) {
+  if(message.bot){
+    $('#bathroom-bot-question').empty();
+    $('#bathroom-bot-question').append("Bot enabled!!<br>Click to disable");
+    if(message.status > 0){
+      sendSlack(message.username)
+      updateBot()
+    }
+  }else{
+    $('#bathroom-bot-question').empty();
+    $('#bathroom-bot-question').append("Click to enable<br>Bathroom-Bot");
+  }
+}
 
 function updateStatus(statuses){
   bathroomOne(statuses.bathroom1)
   bathroomTwo(statuses.bathroom2)
   bathroomThree(statuses.bathroom3)
+}
+
+function updateBot(){
+  $.ajax({
+    url: "/bot_update",
+    dataType: 'json',
+    success: function(success){
+    },
+    error: function(error){
+      console.log(error)
+    }
+  });
 }
 
 function bathroomOne(status){

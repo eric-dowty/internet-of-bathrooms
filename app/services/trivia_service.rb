@@ -28,9 +28,9 @@ class TriviaService
 
   def check_for_validity?(response_body)
     return false if incomplete?(response_body)
+    return false if includes_complex_answers?(response_body[:question])
     return false if too_long?(response_body[:question])
     return false if includes_other_media?(response_body[:question])
-    return false if includes_complex_answers?(response_body[:question])
     true
   end
 

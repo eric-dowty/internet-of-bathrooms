@@ -1,5 +1,4 @@
 function triviaForm(){
-
   clearForm();
 
   $("#trivia-answer-div").fadeOut();

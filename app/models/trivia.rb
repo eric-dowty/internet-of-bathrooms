@@ -58,12 +58,12 @@ class Trivia < ActiveRecord::Base
   def self.common_words
     ["the", "be", "to", "of", "and", "a", "in", "that", "have", "I", "it", 
      "for", "not", "on", "with", "he", "as", "you", "do", "at", "this", "but",
-     "his", "by", "&", "-", ",", "\"", "(", ")", "<i>", "</i>", "<p>", "</p>",
+     "his", "by", "&", "-", ",", ".", "\"", "(", ")", "<i>", "</i>", "<p>", "</p>",
      "<strong>", "</strong>", "[", "]", "{", "}"]
   end
 
   def self.common_chars
-    [",", "\"", "'", "(", ")", "<", ">", "i", "/", "<p>", "</p>", "[", "]", "{", "}"]
+    [",", "\"", "'", "(", ")", "<", ">", "i", "/", "<p>", "</p>", "[", "]", "{", "}", "."]
   end
 
 end

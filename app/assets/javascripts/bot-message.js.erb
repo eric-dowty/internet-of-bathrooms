@@ -1,0 +1,64 @@
+const botMessage = [", a bathroom is ready for you!",
+                    ", I have prepared a bathroom just for you.",
+                    ", bathroom ready... we're running low on TP, may want to bring some.",
+                    ", sorry for the wait, a bathroom awaits.",
+                    ", the Iron Throne sits empty.",
+                    ", take a pomodoro early - a bathroom is free.",
+                    ", better get to the bathroom before DJ beats you there!",
+                    ", Hopper Posse for Life! Also, a bathroom is free",
+                    ", one small step for man, one giant leap for free bathrooms...",
+                    ", GO GO GO, a bathroom is free now!",
+                    ", a bathroom just freed up.",
+                    ", let's do this! A bathrooms is open."]
+
+function botMessenger(){
+
+  setInterval(function(){ 
+    checkMessage()
+  }, 4000);   
+
+};
+
+
+function checkMessage(){
+
+    $.ajax({
+      url: "/bot",
+      dataType: 'json',
+      method: 'GET',
+      success: function(success){
+        checkSlack(success)
+      },
+      error: function(error){
+        console.log(error)
+      }
+    });
+
+};
+
+function sendSlack(username){
+  var url = "https://slack.com/api/chat.postMessage?token=" + "<%= ENV['BATHROOM_BOT_KEY'] %>" + "&channel=C02GP851H&username=BathroomBot&icon_url=http://www.clipartbest.com/cliparts/yTk/6ao/yTk6aoETE.png&text=Hey " + username + bathroomMessage() 
+
+  $.ajax({
+    url: url
+  });
+}
+
+function checkSlack(message) {
+  if(message.bot && message.status > 0){
+    $('#bathroom-bot-question').empty();
+    $('#bathroom-bot-question').append("Click to enable<br>Bathroom-Bot");
+    sendSlack(message.username)
+    updateBot()
+  }
+}
+
+function updateBot(){
+  $.ajax({
+    url: "/bot_update"
+  });
+}
+
+function bathroomMessage(){
+  return botMessage[Math.floor(Math.random()*botMessage.length)];
+}

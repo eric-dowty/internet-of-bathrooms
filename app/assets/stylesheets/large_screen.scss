@@ -15,14 +15,14 @@
 
   #github-login {
     position: absolute;
-    top: 465px;
-    left: calc(50% - 125px);
-    width: 150px !important;
+    top: 475px;
+    left: calc(50% - 110px);
+    width: 250px !important;
   }
 
   #github-logout {
     position: absolute;
-    top: 25px;
+    top: 34px;
     right: 75px;
     width: 50px !important;
   }
@@ -66,12 +66,22 @@
     height: 70px;
     width: 250px;
     font-size: 200%;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
   #logout-btn {
     height: 40px;
     width: 100px;
     font-size: 110%;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 13px;
+    padding-right: 13px;
   }
 
   #avatar {

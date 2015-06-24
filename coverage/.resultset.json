@@ -291,6 +291,7 @@
         1,
         null,
         1,
+        1,
         null,
         1,
         null,
@@ -314,6 +315,7 @@
         1,
         null,
         1,
+        3,
         null,
         null,
         null,
@@ -321,6 +323,7 @@
         3,
         null,
         null,
+        1,
         1,
         1,
         1,
@@ -391,6 +394,8 @@
       ],
       "/Users/ericdowty/Rails/module-3/turing-toilets/turing-bathrooms/app/models/score.rb": [
         1,
+        null,
+        1,
         1,
         null,
         1,
@@ -400,6 +405,12 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
         null,
         null,
         null
@@ -489,14 +500,6 @@
         1,
         null,
         1,
-        14,
-        null,
-        null,
-        1,
-        14,
-        null,
-        null,
-        1,
         2,
         2,
         1,
@@ -519,12 +522,6 @@
         1,
         null,
         1,
-        10,
-        null,
-        null,
-        1,
-        10,
-        10,
         10,
         10,
         null,
@@ -768,6 +765,6 @@
         null
       ]
     },
-    "timestamp": 1435077769
+    "timestamp": 1435175153
   }
 }

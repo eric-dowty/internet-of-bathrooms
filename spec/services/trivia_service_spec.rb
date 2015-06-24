@@ -31,8 +31,8 @@ RSpec.describe TriviaService, type: :model do
     VCR.use_cassette("random_trivia_question") do
       service.get_question
       trivia.update(user_id: user.id)
-      trivia_answer = Trivia.get_answer(user.id)
-      trivia_value  = Trivia.get_value(user.id)
+      trivia_answer = Trivia.find_by(user_id: user.id).answer
+      trivia_value  = Trivia.find_by(user_id: user.id).value
       expect(trivia_answer).to eq("Romeo & Juliet")
       expect(trivia_value).to eq(100)
     end

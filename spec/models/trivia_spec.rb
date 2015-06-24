@@ -8,25 +8,25 @@ RSpec.describe Trivia, type: :model do
 
   it "can get the answer for a user id" do
     trivia.update(user_id: user.id)
-    expect(Trivia.get_answer(user.id)).to eq("Romeo & Juliet")
+    expect(Trivia.find_by(user_id: user.id).answer).to eq("Romeo & Juliet")
   end
 
   it "can get the value for a user id" do
     trivia.update(user_id: user.id)
-    expect(Trivia.get_value(user.id)).to eq(100)
+    expect(Trivia.find_by(user_id: user.id).value).to eq(100)
   end
 
   it "can update the question for existing trivia" do
     trivia.update(user_id: user.id)
     Trivia.update_question(user.id, "Cat", 300)
-    expect(Trivia.get_answer(user.id)).to eq("Cat")
-    expect(Trivia.get_value(user.id)).to eq(300)
+    expect(Trivia.find_by(user_id: user.id).answer).to eq("Cat")
+    expect(Trivia.find_by(user_id: user.id).value).to eq(300)
   end
 
   it "can create a question for a user with no trivia" do
     Trivia.update_question(user.id, "Cat", 300)
-    expect(Trivia.get_answer(user.id)).to eq("Cat")
-    expect(Trivia.get_value(user.id)).to eq(300)
+    expect(Trivia.find_by(user_id: user.id).answer).to eq("Cat")
+    expect(Trivia.find_by(user_id: user.id).value).to eq(300)
   end
 
   it "calculates total score for a guess" do

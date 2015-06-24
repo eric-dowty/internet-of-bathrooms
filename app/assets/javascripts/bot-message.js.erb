@@ -47,7 +47,8 @@ function sendSlack(username){
 function checkSlack(message) {
   if(message.bot && message.status > 0){
     $('#bathroom-bot-question').empty();
-    $('#bathroom-bot-question').append("Click to enable<br>Bathroom-Bot");
+    $('#bathroom-bot-question').append("Click to enable<br>Bathroom-Bot");  
+    console.log("MESSAGE SHOULD CHANGE");
     sendSlack(message.username)
     updateBot()
   }

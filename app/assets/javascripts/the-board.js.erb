@@ -1,0 +1,41 @@
+function theBoard() {
+
+  $('#the-board').mouseenter(function(){
+    $('#the-board-img').attr("src", "<%= asset_path 'dropdown-gray.png' %>");
+    $('#the-board-text').css("color", "#F0F0F0");
+    getBoards();
+  })
+
+  $('#the-board').mouseleave(function(){
+    $('#the-board-img').attr("src", "<%= asset_path 'dropdown.png' %>");
+    $('#the-board-text').css("color", "#FFFFFF ");
+    $('#listings').css("visibility", "hidden");
+  })
+
+}
+
+function getBoards(){
+  $.ajax({
+    url: "/boards",
+    dataType: 'json',
+    success: function(success){
+      displayBoards(success)
+    },
+    error: function(error){
+      console.log(error)
+    }
+  });
+}
+
+function displayBoards(users){
+  $('#listings-table').empty();
+  $.each(users, function(index, user){
+    var row = newRow(user)
+    $('#listings-table').append(row);
+  });
+  $('#listings').css("visibility", "visible");
+}
+
+function newRow(user){
+  return "<tr><td class='names-column'>" + user.name + "</td><td align='right' class='points-column'>" + user.points + "</td></tr>"
+}

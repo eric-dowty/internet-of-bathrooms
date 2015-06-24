@@ -40,19 +40,23 @@ function triviaSubmit(){
     
     $("#trivia-div").fadeOut();
     
-    $.ajax({
-      type: "GET",
-      url:  "/answer",
-      data: "guess=" + inputBox,
-      dataType: "json",
-      success: function(success){
-        clearAnswerForm();
-        loadReport(success)
-      },
-      error: function(error){
-        console.log(error)
-      }
-    })
+    if (inputBox === "?"){
+      triviaForm();
+    } else {
+      $.ajax({
+        type: "GET",
+        url:  "/answer",
+        data: "guess=" + inputBox,
+        dataType: "json",
+        success: function(success){
+          clearAnswerForm();
+          loadReport(success)
+        },
+        error: function(error){
+          console.log(error)
+        }
+      })
+    }
   });
 
 };

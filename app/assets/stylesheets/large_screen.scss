@@ -29,7 +29,7 @@
 
   #trivia-score {
     position: absolute;
-    top: 33px;
+    top: 25px;
     right: 190px;  
   }
 
@@ -337,10 +337,10 @@
   }
 
   #bathroom-notifier {
-    width: 110px;
+    width: 80px;
     position: absolute;
     top: 615px;
-    right: 15px; 
+    right: 30px; 
     text-align: center;
   }
 
@@ -378,6 +378,7 @@
     height: 22px;
     width: 22px;
     font-size: 65%;
+    z-index: 10000;
   }
 
   #bathroom-bot-about-btn:hover {
@@ -517,6 +518,67 @@
 
   #trivia-next-btn:focus {
     outline: 0;
+  }
+
+  #the-board-img { 
+    position: absolute;
+    top: 55px;
+    right: 195px;
+    width: 12px;
+  }
+
+  #the-board-text {
+    position: absolute;
+    top: 54px;
+    right: 210px;
+    font-size: 70%;
+    font-family: 'Coda', cursive;
+    color: white;
+  }
+
+  #listings {
+    background-color: #383838;
+    opacity: 0.8;
+    border-radius: 10px;
+    position: absolute;
+    top: 68px;
+    right: 190px;
+    width: 150px;
+    height: 100px;
+    visibility: hidden;
+    z-index: 100000;
+  }
+
+  #listings-table {
+    z-index: 100001;
+    table-layout: fixed; 
+    width: 100%;
+  }
+
+  #listings-table td {
+    font-size: 70%;
+    font-family: 'Coda', cursive;
+    color: white;
+  }
+
+  .names-column {
+    width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .points-column {
+    align: right;
+    width: 50px;
+  }
+
+  #the-board {
+    position: absolute;
+    top: 53px;
+    right: 190px;
+    width: 85px;
+    height: 15px;
+    z-index: 10000;
   }
 
 }

@@ -1,4 +1,5 @@
 function triviaForm(){
+  $("#trivia-input").attr('placeholder', "enter your guess");
   clearForm();
 
   $("#trivia-answer-div").fadeOut();

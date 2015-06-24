@@ -20,13 +20,13 @@
   <p>Big workspace bathroom availability.</p>
 </div>
 
-<%= render partial: 'bathrooms/score' %>
-
-<%= render partial: 'bathrooms/trivia' %>
-
-<%= render partial: 'bathrooms/answer' %>
-
-<%= render partial: 'bathrooms/status', :locals => { :toilet_status => @toilet_status } %>
+<%= image_tag("dropdown.png", id: "the-board-img") %>
+<div id="the-board-text">Leaderboard</div>
+<div id="the-board"></div>
+<div id="listings">
+  <table id="listings-table">
+  </table>
+</div>
 
 
 <%= image_tag("bathroom-bot-2.png", id: "bathroom-bot") %>
@@ -37,9 +37,9 @@
   <i><span id="bathroom-bot-question"></span></i>
 </div>
 
-<script type="text/javascript">toiletStatus()</script>
-<script type="text/javascript">triviaForm()</script>
-<script type="text/javascript">clearPlaceholder()</script>
-<script type="text/javascript">triviaSubmit()</script>
-<script type="text/javascript">skipQuestion()</script>
-<script type="text/javascript">botInfo()</script>
+<%= render partial: 'bathrooms/score' %>
+<%= render partial: 'bathrooms/trivia' %>
+<%= render partial: 'bathrooms/answer' %>
+<%= render partial: 'bathrooms/scripts' %>
+<%= render partial: 'bathrooms/status', :locals => { :toilet_status => @toilet_status } %>
+

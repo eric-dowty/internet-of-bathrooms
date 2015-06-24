@@ -9,3 +9,26 @@
 Bathroom.create!(description: 'bathroom1')
 Bathroom.create!(description: 'bathroom2')
 Bathroom.create!(description: 'bathroom3')
+
+count = 1
+
+6.times do
+  User.create(nickname: "Bot#{count}")
+  count += 1
+end
+
+count = 1
+
+3.times do
+  user  = User.find_by(nickname: "Bot#{count}")
+  score = count * 100 
+  Score.create(user_id: user.id, points: score)
+  count += 1
+end
+
+3.times do
+  user  = User.find_by(nickname: "Bot#{count}")
+  score = count * -100 
+  Score.create(user_id: user.id, points: score)
+  count += 1
+end

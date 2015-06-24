@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   get                 '/bot_update', to: 'users#update_bot_data'
 
   get                      '/score', to: 'scores#show'
-  
+  get                     '/boards', to: 'scores#boards'
+
   get                       '*path', :to => 'errors#show'
 
   root 'bathrooms#home'

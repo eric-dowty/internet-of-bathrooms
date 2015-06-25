@@ -37,5 +37,6 @@ function displayBoards(users){
 }
 
 function newRow(user){
-  return "<tr><td class='names-column'>" + user.name + "</td><td align='right' class='points-column'>" + user.points + "</td></tr>"
+  var row = "<tr><td class='names-column'>" + user.name + "</td><td align='right' class='points-column'>" + user.points + "</td></tr>"
+  return row
 }

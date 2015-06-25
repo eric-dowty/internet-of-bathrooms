@@ -4,5 +4,4 @@ FactoryGirl.define do
     points 0
   end
 
-
 end

@@ -28,7 +28,7 @@ function checkMessage(){
 };
 
 function sendSlack(username){
-  var url = "https://slack.com/api/chat.postMessage?token=" + "<%= ENV['BATHROOM_BOT_KEY'] %>" + "&channel=C02AZBZ81&username=BathroomBotTest&icon_url=http://www.clipartbest.com/cliparts/yTk/6ao/yTk6aoETE.png&text=Hey " + username + bathroomMessage() 
+  var url = "https://slack.com/api/chat.postMessage?token=" + "<%= ENV['BATHROOM_BOT_KEY'] %>" + "&channel=C02AZBZ81&username=BathroomBot&icon_url=http://www.clipartbest.com/cliparts/yTk/6ao/yTk6aoETE.png&text=Hey " + username + bathroomMessage() 
 
   $.ajax({
     url: url

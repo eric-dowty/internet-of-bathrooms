@@ -1,6 +1,7 @@
 require 'simplecov'
 SimpleCov.start
 
+require 'capybara/rspec'
 require 'webmock/rspec'
 require 'vcr'
 WebMock.allow_net_connect!(:net_http_connect_on_start => true)

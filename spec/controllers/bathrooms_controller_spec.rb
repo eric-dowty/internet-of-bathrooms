@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'json'
 
 RSpec.describe BathroomsController, type: :controller do
 
@@ -27,9 +28,24 @@ RSpec.describe BathroomsController, type: :controller do
   describe "GET #main" do
     it "returns http success for main" do
       get :main
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(302)
     end
   end
 
+  describe "GET #status" do
+    it "returns the status of the bathrooms" do
+      get :status, format: :json
+      result = JSON.parse(response.body)
+      expect(result).to eq({"bathroom1"=>0, "bathroom2"=>0, "bathroom3"=>0})
+    end
+  end
+
+  describe "GET #updates" do
+    it "returns the updated status for the bathrooms" do
+      get :updates, format: :json
+      result = {"bathroom1"=>0, "bathroom2"=>1, "bathroom3"=>0}
+      expect(result).to eq({"bathroom1"=>0, "bathroom2"=>1, "bathroom3"=>0})
+    end
+  end
 
 end

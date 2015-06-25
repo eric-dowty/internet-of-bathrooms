@@ -38,26 +38,4 @@ RSpec.describe TriviaService, type: :model do
     end
   end
 
-  xit "returns false if other media is included in the question" do
-    VCR.use_cassette("random_trivia_question") do
-      result = service.includes_other_media?("This includes Video")
-      expect(result).to eq(true)
-    end
-  end
-
-  xit "returns false if other media is included in the question" do
-    VCR.use_cassette("random_trivia_question") do
-      result = service.includes_complex_answers?("<i>This includes i</i>")
-      expect(result).to eq(true)
-      result = service.includes_complex_answers?("<strong>This includes strong</strong>")
-      expect(result).to eq(true)
-      result = service.includes_complex_answers?("[This includes brackets]")
-      expect(result).to eq(true)
-      result = service.includes_complex_answers?("(This includes parens)")
-      expect(result).to eq(true)
-      result = service.includes_complex_answers?("This is fine")
-      expect(result).to eq(false)
-    end
-  end
-
 end
